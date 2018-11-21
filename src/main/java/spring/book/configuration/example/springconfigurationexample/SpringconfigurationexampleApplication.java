@@ -1,12 +1,14 @@
 package spring.book.configuration.example.springconfigurationexample;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import spring.book.configuration.example.springconfigurationexample.Starship.Starship;
 
-@SpringBootApplication
 public class SpringconfigurationexampleApplication {
-
     public static void main(String[] args) {
-        SpringApplication.run(SpringconfigurationexampleApplication.class, args);
+        ApplicationContext context
+                = new AnnotationConfigApplicationContext(AppConfig.class);
+        Starship starship = context.getBean(Starship.class);
+        starship.reportForDudy();
     }
 }
