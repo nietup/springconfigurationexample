@@ -1,0 +1,1 @@
+Manual bean configuration example
